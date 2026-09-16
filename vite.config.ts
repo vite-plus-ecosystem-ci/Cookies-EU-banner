@@ -6,6 +6,7 @@ const OUTPUT_BASE_FILE_NAME = "cookies-eu-banner";
 export default defineConfig({
 	pack: [
 		{
+			deps: { resolveDepSubpath: true },
 			entry: {
 				[OUTPUT_BASE_FILE_NAME]: `src/index.ts`,
 			},
@@ -13,6 +14,7 @@ export default defineConfig({
 		},
 
 		{
+			deps: { resolveDepSubpath: true },
 			entry: {
 				[`${OUTPUT_BASE_FILE_NAME}.headless`]: `src/headless.ts`,
 			},
@@ -20,6 +22,7 @@ export default defineConfig({
 		},
 
 		{
+			deps: { resolveDepSubpath: true },
 			entry: {
 				[OUTPUT_BASE_FILE_NAME]: `src/index.global.ts`,
 			},
@@ -42,7 +45,9 @@ export default defineConfig({
 		options: { typeAware: true, typeCheck: true },
 	},
 	test: {
+		clearMocks: false,
 		browser: {
+			locators: { exact: false },
 			enabled: true,
 			headless: true,
 			screenshotFailures: false,

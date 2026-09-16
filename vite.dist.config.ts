@@ -3,7 +3,9 @@ import { playwright } from "vite-plus/test/browser-playwright";
 
 export default defineConfig({
 	test: {
+		clearMocks: false,
 		browser: {
+			locators: { exact: false },
 			enabled: true,
 			headless: true,
 			screenshotFailures: false,
