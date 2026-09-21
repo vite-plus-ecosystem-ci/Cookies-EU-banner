@@ -6,6 +6,7 @@ const OUTPUT_BASE_FILE_NAME = "cookies-eu-banner";
 export default defineConfig({
 	pack: [
 		{
+			deps: { resolveDepSubpath: true },
 			entry: {
 				[OUTPUT_BASE_FILE_NAME]: `src/index.ts`,
 			},
@@ -13,6 +14,7 @@ export default defineConfig({
 		},
 
 		{
+			deps: { resolveDepSubpath: true },
 			entry: {
 				[`${OUTPUT_BASE_FILE_NAME}.headless`]: `src/headless.ts`,
 			},
@@ -20,6 +22,7 @@ export default defineConfig({
 		},
 
 		{
+			deps: { resolveDepSubpath: true },
 			entry: {
 				[OUTPUT_BASE_FILE_NAME]: `src/index.global.ts`,
 			},
@@ -42,7 +45,19 @@ export default defineConfig({
 		options: { typeAware: true, typeCheck: true },
 	},
 	test: {
+		// Vitest v4 compatibility: preserve mock call history.
+		// Remove after tests no longer rely on calls from setup or earlier tests.
+		// https://rfc-vitest-v5-upgrade-viteplus-dev.voidzero-docs.workers.dev/guide/vitest-v5#remove-unneeded-compatibility-settings
+		// https://vitest.dev/guide/migration/#clearmocks-is-enabled-by-default
+		clearMocks: false,
 		browser: {
+			locators: {
+				// Vitest v4 compatibility: keep partial, case-insensitive locator matching.
+				// Remove after updating locators for full, case-sensitive matches.
+				// https://rfc-vitest-v5-upgrade-viteplus-dev.voidzero-docs.workers.dev/guide/vitest-v5#remove-unneeded-compatibility-settings
+				// https://vitest.dev/guide/migration/#locators-are-strict-by-default
+				exact: false,
+			},
 			enabled: true,
 			headless: true,
 			screenshotFailures: false,
