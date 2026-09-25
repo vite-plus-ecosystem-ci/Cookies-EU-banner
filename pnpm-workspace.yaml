@@ -10,8 +10,8 @@ catalog:
   "@astrojs/markdown-satteri": ^0.4.1
   "@astrojs/mdx": ^8.0.1
   "@types/node": ^26.6.2
-  "@vitest/browser-playwright": ^4.1.11
-  "@vitest/coverage-istanbul": 4.1.11
+  "@vitest/browser-playwright": 5.0.1
+  "@vitest/coverage-istanbul": 5.0.1
   astro: ^7.3.3
   bumpp: ^12.3.0
   playwright: ^1.63.0
@@ -19,19 +19,35 @@ catalog:
   sharp: ^0.35.4
   subset-font: ^2.7.0
   typescript: npm:typescript-native-bridge@^6.0.3-bridge.17.tsgo.7.0.2
-  vite: npm:@voidzero-dev/vite-plus-core@0.3.3
-  vite-plus: 0.3.3
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a
+  vite-plus: 0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a
+  vitest: 5.0.1
 
 catalogMode: strict
 
 linkWorkspacePackages: true
 
+minimumReleaseAgeExclude:
+  - "@voidzero-dev/vite-plus-core@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-darwin-arm64@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-darwin-x64@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-linux-arm64-gnu@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-linux-arm64-musl@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-linux-x64-gnu@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-linux-x64-musl@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-win32-arm64-msvc@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - "@voidzero-dev/vite-plus-win32-x64-msvc@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a"
+  - vite-plus@0.0.0-commit.73ce44ef507f7c2aed23bc5addd747d0e3d0b33a
+
 overrides:
   vite@*: "catalog:"
   playwright@*: "catalog:"
+  vitest@*: "catalog:"
 
 peerDependencyRules:
   allowAny:
     - vite
+    - vitest
   allowedVersions:
     vite: "*"
+    vitest: "*"
