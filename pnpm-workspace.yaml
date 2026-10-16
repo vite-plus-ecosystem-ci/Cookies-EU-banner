@@ -10,8 +10,8 @@ catalog:
   "@astrojs/markdown-satteri": ^0.4.1
   "@astrojs/mdx": ^8.0.1
   "@types/node": ^26.6.2
-  "@vitest/browser-playwright": ^4.1.11
-  "@vitest/coverage-istanbul": 4.1.11
+  "@vitest/browser-playwright": 5.0.5
+  "@vitest/coverage-istanbul": 5.0.5
   astro: ^7.3.3
   bumpp: ^12.3.0
   playwright: ^1.63.0
@@ -19,19 +19,46 @@ catalog:
   sharp: ^0.35.4
   subset-font: ^2.7.0
   typescript: npm:typescript-native-bridge@^6.0.3-bridge.17.tsgo.7.0.2
-  vite: npm:@voidzero-dev/vite-plus-core@0.3.3
-  vite-plus: 0.3.3
+  vite: npm:@voidzero-dev/vite-plus-core@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1
+  vite-plus: 0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1
+  vitest: 5.0.5
 
 catalogMode: strict
 
 linkWorkspacePackages: true
 
+minimumReleaseAgeExclude:
+  - "@vitest/browser-playwright@5.0.5"
+  - "@vitest/browser-preview@5.0.5"
+  - "@vitest/browser@5.0.5"
+  - "@vitest/coverage-istanbul@5.0.5"
+  - "@vitest/mocker@5.0.5"
+  - "@vitest/pretty-format@5.0.5"
+  - "@vitest/snapshot@5.0.5"
+  - "@vitest/spy@5.0.5"
+  - "@vitest/ui@5.0.5"
+  - "@vitest/utils@5.0.5"
+  - "@voidzero-dev/vite-plus-core@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-darwin-arm64@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-darwin-x64@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-linux-arm64-gnu@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-linux-arm64-musl@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-linux-x64-gnu@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-linux-x64-musl@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-win32-arm64-msvc@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - "@voidzero-dev/vite-plus-win32-x64-msvc@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1"
+  - vite-plus@0.0.0-commit.6a30b43184ad1c159091d51d728ee8c249392aa1
+  - vitest@5.0.5
+
 overrides:
   vite@*: "catalog:"
   playwright@*: "catalog:"
+  vitest@*: "catalog:"
 
 peerDependencyRules:
   allowAny:
     - vite
+    - vitest
   allowedVersions:
     vite: "*"
+    vitest: "*"
